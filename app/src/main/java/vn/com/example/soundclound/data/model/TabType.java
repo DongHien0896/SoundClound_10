@@ -1,12 +1,12 @@
-package vn.com.example.soundclound.data.model.common;
+package vn.com.example.soundclound.data.model;
 
 import android.support.annotation.IntDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-import static vn.com.example.soundclound.data.model.common.TabType.OFFLINE;
-import static vn.com.example.soundclound.data.model.common.TabType.ONLINE;
+import static vn.com.example.soundclound.data.model.TabType.OFFLINE;
+import static vn.com.example.soundclound.data.model.TabType.ONLINE;
 
 @IntDef({OFFLINE, ONLINE})
 @Retention(RetentionPolicy.SOURCE)

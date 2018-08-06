@@ -2,8 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_vertical"
-    android:gravity="center"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,7 +16,7 @@
             android:layout_marginLeft="@dimen/dp_25"
             android:layout_weight="@integer/integer_1"
             android:gravity="center_vertical"
-            android:text="@string/string_the_loai"
+            android:text="@string/tittle_the_loai"
             android:textColor="@color/color_black" />
 
         <Spinner

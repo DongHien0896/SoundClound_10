@@ -6,8 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import vn.com.example.soundclound.R;
-import vn.com.example.soundclound.data.model.common.Constants;
-import vn.com.example.soundclound.data.model.common.TabType;
+import vn.com.example.soundclound.data.model.Constants;
+import vn.com.example.soundclound.data.model.TabType;
 import vn.com.example.soundclound.screen.offline.OfflineFragment;
 import vn.com.example.soundclound.screen.online.OnlineFragment;
 
@@ -46,10 +46,10 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
         String title = Constants.STRING_EMPTY;
         switch (position) {
             case TabType.OFFLINE:
-                title = mContext.getResources().getString(R.string.string_offline);
+                title = mContext.getResources().getString(R.string.tittle_offline);
                 break;
             case TabType.ONLINE:
-                title = mContext.getResources().getString(R.string.string_online);
+                title = mContext.getResources().getString(R.string.tittle_online);
                 break;
             default:
                 break;
