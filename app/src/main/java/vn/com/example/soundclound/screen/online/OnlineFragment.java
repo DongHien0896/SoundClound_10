@@ -91,7 +91,7 @@ public class OnlineFragment extends BaseFragment<OnlinePresenter> implements Cal
 
     private void initRecycler(View rootView) {
         mSongs = new ArrayList<>();
-        mSongAdapter = new SongAdapter(getActivity(), mSongs, this);
+        mSongAdapter = new SongAdapter(getActivity(), mSongs, this, false);
         mRecyclerViewSongs = rootView.findViewById(R.id.recycler_songs);
         mRecyclerViewSongs.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());

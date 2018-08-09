@@ -21,11 +21,13 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
     private Context mContext;
     private List<Song> mSongs;
     private CallbackSongAdapter mCallback;
+    private boolean mIsOffline = false;
 
-    public SongAdapter(Context context, List<Song> songs, CallbackSongAdapter callbackSongAdapter) {
+    public SongAdapter(Context context, List<Song> songs, CallbackSongAdapter callbackSongAdapter, boolean isOffline) {
         this.mContext = context;
         this.mSongs = songs;
         this.mCallback = callbackSongAdapter;
+        this.mIsOffline = isOffline;
     }
 
     @NonNull
@@ -37,7 +39,10 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull SongViewHolder holder, int position) {
-        holder.bindData(mSongs.get(position));
+        if (mIsOffline) {
+            holder.bindDataOffline(mSongs.get(position));
+        } else
+            holder.bindData(mSongs.get(position));
     }
 
 
@@ -78,6 +83,16 @@ public class SongAdapter extends RecyclerView.Adapter<SongAdapter.SongViewHolder
                 mTextSongName.setText(song.getTitle());
                 mTextArtist.setText(song.getUserName());
                 mImageDownload.setVisibility(song.isDownloadable() ? View.VISIBLE : View.GONE);
+            }
+        }
+
+        public void bindDataOffline(Song song) {
+            if (song != null) {
+                mImageAvatar.setVisibility(View.GONE);
+                mImageDownload.setVisibility(View.GONE);
+                mImageSelection.setVisibility(View.GONE);
+                mTextSongName.setText(song.getTitle());
+                mTextArtist.setText(song.getUserName());
             }
         }
 
